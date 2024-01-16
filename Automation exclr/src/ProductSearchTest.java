@@ -15,6 +15,8 @@ WebDriver driver = new ChromeDriver();
 Driver.get(http:automationexercise.com);
 Try{
 Thread.sleep(5000);
+    driver.manage().timeouts().implicitlyWait (Duration.  oFSeconds(10));
+    
 }
 Catch(InterruptedException e){
 e.printStackTrace();
