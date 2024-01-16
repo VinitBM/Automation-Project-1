@@ -18,6 +18,8 @@ driver.get(http:automationexercise.com);
 try{
 
 Thread.sleep(6000);
+        driver.manage()timeouts().implicitlyWait (Duration.  oFSeconds(10));
+        
 }
 Catch(InterruptedException e){
 e.printStackTrace();
