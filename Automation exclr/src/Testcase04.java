@@ -10,6 +10,7 @@ System.setProperty(“"webdriver.chrome.driver", "E:/loopsautomation/src/main/re
 
 WebDriver driver = new ChromeDriver();
 Driver.get(http:automationexcercise.com);
+  driver.manage()timeouts().implicitlyWait (Duration.  oFSeconds(10));
 
 WebElement homePageElement = driver.findElement(By.xpath("[text()='Home Page Element']"));
 If(homePageElement.isDisplayed()){
