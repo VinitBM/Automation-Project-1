@@ -14,6 +14,8 @@ System.setProperty(“"webdriver.chrome.driver", "E:/loopsautomation/src/main/re
 
 WebDriver driver = new ChromeDriver();
 Driver.get(http:automationexercise.com);
+
+      driver.manage()timeouts().implicitlyWait (Duration.  oFSeconds(10));
 Try{
 Thread.sleep(5000);
     driver.manage().timeouts().implicitlyWait (Duration.  oFSeconds(10));
