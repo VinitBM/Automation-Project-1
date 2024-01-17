@@ -15,10 +15,12 @@ System.setProperty(“"webdriver.chrome.driver", "E:/loopsautomation/src/main/re
 WebDriver driver = new ChromeDriver();
 
 driver.get(http:automationexercise.com);
+
+          driver.manage()timeouts().implicitlyWait (Duration.  oFSeconds(10));
 try{
 
 Thread.sleep(6000);
-        driver.manage()timeouts().implicitlyWait (Duration.  oFSeconds(10));
+      
         
 }
 Catch(InterruptedException e){
