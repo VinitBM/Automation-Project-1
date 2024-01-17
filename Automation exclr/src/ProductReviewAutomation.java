@@ -12,6 +12,7 @@ public class ProductReviewAutomation extends AbstractMethods {
         WebDriver driver = new ChromeDriver();
 
         driver.get("http://automationexercise.com");
+          driver.manage()timeouts().implicitlyWait (Duration.  oFSeconds(10));
         WebElement productsButton = driver.findElement(By.xpath ("/html[1]/body[1]/header[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]])");
         productsButton.click();
         WebElement viewProductButton = driver.findElement(By.xpath("/html[1]/body[1]/header[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]]"));
