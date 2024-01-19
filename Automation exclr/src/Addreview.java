@@ -1,37 +1,35 @@
-package SeleniumProject;
+package automationexercise;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import utilities.AbstractMethods;
 
-public class Addreview extends AbstractMethods {
-	WebDriver driver;
 
-	public Addreview(WebDriver driverhere) {
-		super(driverhere);
-		this.driver = driverhere;
-		PageFactory.initElements(driver, this);
-	}
-	@FindBy(xpath = "//input[@id='name']")
-	WebElement entername;
+public class Addreview extends Abstract {
+    WebDriver driver;
 
-	@FindBy(xpath = "//input[@id='email']")
-	WebElement enteremail;
+    public Addreview(WebDriver driverhere) {
+        super(driverhere);
+        this.driver = driverhere;
+        PageFactory.initElements(driver, this);
+    }
 
-	@FindBy(xpath = "(//button[@type='submit'])[1]")
-	WebElement submitbutton;
-	
-	public void addreview() {
-		Productdetailspage pd = new Productdetailspage(driver);
-		pd.productdetails();
-		entername.sendKeys("Vinit");
-		enteremail.sendKeys("vinitbmhetre@gmail.com");
-		submitbutton.click();
-		System.out.println("'Thank you for review.'");
-		
-	}
+    @FindBy(xpath = "//input[@id='name']")
+    WebElement enterName;
 
+    @FindBy(xpath = "//input[@id='email']")
+    WebElement enterEmail;
+
+    @FindBy(xpath = "(//button[@type='submit'])[1]")
+    WebElement submitButton;
+
+    public void addReview() {
+        
+        enterName.sendKeys("Vinit");
+        enterEmail.sendKeys("vinitbmhetre@gmail.com");
+        submitButton.click();
+        System.out.println("Thank you for the review."); 
+    }
 }
