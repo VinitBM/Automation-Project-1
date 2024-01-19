@@ -1,55 +1,55 @@
+package automationexercise;
 
-package SeleniumProject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-public class AutomationExerciseInvalidLogin extends AbstractMethods {
-        WebDriver driver;{
 
-public static void main(String[] args){
+public class AutomationExerciseInvalidLogin extends Abstract{
+    WebDriver driver;
 
-System.setProperty("webdriver.chrome.driver", "E:/loopsautomation/src/main/resources/chromedriver.exe");
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "D:\MOVIES\chromedriver-win64.zip\New folder\chromedriver-win64");
 
-WebDriver driver = new ChromeDriver();
-Driver.get(http:automationexercise.com);
-WebElement homePageElement = driver.findElement(By.xpath(“*[text()=’home page element’]”));
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://automationexercise.com");
 
-If(homePageElement.isDisplayed()){
-System.out.println(“Home page is visible”);
-}
-Else{
-System.out.println(“Home page is not visible”);
-}
+        WebElement homePageElement = driver.findElement(By.xpath("//*[text()='home page element']"));
 
-        WebElement signupLoginButton = driver.findElement(By.xpath("button[contains(text(),'Signup / Login')]"));
-signupLoginButton.click();
+        if (homePageElement.isDisplayed()) {
+            System.out.println("Home page is visible");
+        } else {
+            System.out.println("Home page is not visible");
+        }
 
-WebElement loginToAccount = driver.findElement(By.xpath(“*[contains(text(),login to your account)]”));
+        WebElement signupLoginButton = driver.findElement(By.xpath("//button[contains(text(),'Signup / Login')]"));
+        signupLoginButton.click();
 
-If (login ToAccount .isDisplayed()){
+        WebElement loginToAccount = driver.findElement(By.xpath("//*[contains(text(),'login to your account')]"));
 
-System.out.println(“login to your account is visible”);
-}
-Else{
-System.out.println(“login to your account is not visible”);
-}
+        if (loginToAccount.isDisplayed()) {
+            System.out.println("Login to your account is visible");
+        } else {
+            System.out.println("Login to your account is not visible");
+        }
 
-WebElement emailField = driver.findElement(By.id(Vinitb@gmail.com));
-emailField.sendKeys(“Vinitbm@gmail.com”);
+        WebElement emailField = driver.findElement(By.id("Vinitb@gmail.com"));
+        emailField.sendKeys("Vinitbm@gmail.com");
+
         WebElement passwordField = driver.findElement(By.id("Vinneet@1234"));
-passwordField.sendKeys(“Vineet@1234”);
+        passwordField.sendKeys("Vineet@1234");
+
+        WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
         loginButton.click();
-        WebElement errorElement = driver.findElement(By.xpath("[contains(text(),'Your email or password is incorrect!')]"));
+
+        WebElement errorElement = driver.findElement(By.xpath("//*[contains(text(),'Your email or password is incorrect!')]"));
+
         if (errorElement.isDisplayed()) {
             System.out.println("'Your email or password is incorrect!' error is visible");
         } else {
             System.out.println("'Your email or password is incorrect!' error is not visible");
         }
+
         driver.quit();
     }
 }
-
-
-
-
