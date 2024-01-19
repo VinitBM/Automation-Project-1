@@ -1,65 +1,64 @@
-package SeleniumProject;
+package automationexercise;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class  ExcerciseLogin extends AbstractMethods {
-  WebDriver driver;{
+public class ExcerciseLogin extends Abstract {
+    WebDriver driver;
 
-public static void main(String[] args){
-System.setProperty(“"webdriver.chrome.driver", "E:/loopsautomation/src/main/resources/chromedriver.exe");
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "D:\\MOVIES\\chromedriver-win64.zip\\New folder\\chromedriver-win64\\chromedriver.exe");
 
-WebDriver driver = new ChromeDriver();
-Driver.get(http:automationexercise.com);
-WebElement homePageElement = driver.findElement(By.xpath(“[text()=’Home page Element’]”));
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://automationexercise.com");
 
-If (homePageElement.isDisplayed()){
-System.out.println(“Home page is not visible”);
-}
-WebElement signupLoginButton = driver.findElement(“By.xpath(“button[contains(text(),’Signup/Login’)]”));
-SignupLoginButton.click();
-WebElement loginToAccount = driverfind.Element(By.xpath(“[contains(text(),’Login to your account’)]”));
+        WebElement homePageElement = driver.findElement(By.xpath("//text()='Home page Element']"));
 
-If (loginToAccount.is Displayed()){
+        if (!homePageElement.isDisplayed()) {
+            System.out.println("Home page is not visible");
+        }
 
-System.out.println(“Login to your account is visible”);
-}
-Else{
+        WebElement signupLoginButton = driver.findElement(By.xpath("//button[contains(text(),'Signup/Login')]"));
+        signupLoginButton.click();
 
-System.out.println(“Login to your account is not visible”);
-}
-WebElement emailField = driver.findElement(by.id(Vinitb@gmail.com));
-emailField.sendKeys(Vinitb@gmail.com);
-WebElement emailField = driver.findElement(by.id(“Vinitexcler@1234”);
-passwordField.sendKeys(“Vinitexclr@1234”);
-WebElement loginButton= driver.findElement(By.xpath(“button[contain(text(),login)]”));
-loginButton.click();
-WebElement loggedInText = driver.findElement(By.xpath(“[contains(text(),logged as username’)]”));
+        WebElement loginToAccount = driver.findElement(By.xpath("//contains(text(),'Login to your account')]"));
 
-If(loggedinText.isDisplayed()){
-System.out.println(“Username is visible”);
-}
-Else{
+        if (loginToAccount.isDisplayed()) {
+            System.out.println("Login to your account is visible");
+        } else {
+            System.out.println("Login to your account is not visible");
+        }
 
-System.out.println(“Username is not visible”);
-}
-  WebElement deleteAccountButton = driver.findElement(By.xpath("//button[contains(text(),'Delete Account')]"));
-deleteAccountButton.click();
+        WebElement emailField = driver.findElement(By.id("Vinitb@gmail.com"));
+        emailField.sendKeys("Vinitb@gmail.com");
+
+        WebElement passwordField = driver.findElement(By.id("Vinitexcler@1234"));
+        passwordField.sendKeys("Vinitexclr@1234");
+
+        WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'login')]"));
+        loginButton.click();
+
+        WebElement loggedInText = driver.findElement(By.xpath("//contains(text(),'logged as username')]"));
+
+        if (loggedInText.isDisplayed()) {
+            System.out.println("Username is visible");
+        } else {
+            System.out.println("Username is not visible");
+        }
+
+        WebElement deleteAccountButton = driver.findElement(By.xpath("//button[contains(text(),'Delete Account')]"));
+        deleteAccountButton.click();
 
         WebElement accountDeleted = driver.findElement(By.xpath("//*[contains(text(),'ACCOUNT DELETED!')]"));
 
-If(accountDeleted.isDisplayed()){
-System.out.println(“Account is deleted is visible”);
+        if (accountDeleted.isDisplayed()) {
+            System.out.println("Account is deleted is visible");
+        } else {
+            System.out.println("Account deleted is not visible");
+        }
+
+        driver.quit();
+    }
 }
-Else{
-System.out.println(“Account deleted is not visible”);
-}
-Driver.quite();
-}}
-
-
-
-
-
-
