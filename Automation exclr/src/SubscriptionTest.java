@@ -1,55 +1,54 @@
+package automationexercise;
 
-package SeleniumProject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import java.time.Duration;
 
 public class SubscriptionTest extends AbstractMethods {
-    WebDriver driver;{
+    WebDriver driver;
 
-public static void main(String[]args){
-System.setProperty(“"webdriver.chrome.driver", "E:/loopsautomation/src/main/resources/chromedriver.exe");
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "D:\\MOVIES\\chromedriver-win64.zip\\New folder\\chromedriver-win64\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://automationexercise.com");
 
-WebDriver driver = new ChromeDriver();
-Driver.get(http:automationexercise.com);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-      driver.manage()timeouts().implicitlyWait (Duration.  oFSeconds(10));
-Try{
-Thread.sleep(5000);
-    driver.manage().timeouts().implicitlyWait (Duration.  oFSeconds(10));
-}
-Catch(InterruptedExeption e){
-e.printStackTrace();
-}
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-JavascriptExecuter js = (javascriptExecutor)driver;
-Js.executeScript(“window.scrollTo(0,document.body.scrollHeight)”);
-WebElement subscriptionText = driver,findElement(By.xpath(“h2[contains(text(),Subscription)]”));
-If (subscriptionText.isDisplayed())
-{
-System.out.println(‘Subscription’text is visible in the footer”);
-} else{
-System.out.println(‘Subscription ‘text is not visible in the footer”);
-}
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 
-String email=puneetBm@gmail.com:
-WebElement emailInput = driver.findElement(By.id(email_input”));
-emailInput.sendKeys(email);
-WebElement arrowButton = driver.findElement(By.id(“arrow_button”));
-arrowButton.click();
-WebElement successMessage = driver.findElement(By.xpath("//div[contains(text(), 'You have been successfully subscribed!')]"));
+        WebElement subscriptionText = driver.findElement(By.xpath("//h2[contains(text(),'Subscription')]"));
+
+        if (subscriptionText.isDisplayed()) {
+            System.out.println("Subscription text is visible in the footer");
+        } else {
+            System.out.println("Subscription text is not visible in the footer");
+        }
+
+        String email = "puneetBm@gmail.com";
+        WebElement emailInput = driver.findElement(By.id("email_input"));
+        emailInput.sendKeys(email);
+
+        WebElement arrowButton = driver.findElement(By.id("arrow_button"));
+        arrowButton.click();
+
+        WebElement successMessage = driver.findElement(By.xpath("//div[contains(text(), 'You have been successfully subscribed!')]"));
+
         if (successMessage.isDisplayed()) {
             System.out.println("Success message 'You have been successfully subscribed!' is visible.");
         } else {
             System.out.println("Success message is not visible or subscription failed.");
         }
+
         driver.quit();
     }
 }
-
-
-
-
-
